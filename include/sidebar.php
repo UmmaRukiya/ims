@@ -84,7 +84,7 @@
                             <li><a href="<?= $baseurl ?>assets/form-wizard.html">Wizard</a></li>
                             <li><a href="<?= $baseurl ?>assets/form-editor-summernote.html">Summernote</a></li>
                             <li><a href="form-pickers.html">Pickers</a></li>
-                            <li><a href="<?= $baseurl ?>form.php">Jquery Validate</a></li>
+                            <li><a href="<?= $baseurl ?>student-form.php">Student</a></li>
                         </ul>
                     </li>
                     <li class="nav-label">Table</li>
