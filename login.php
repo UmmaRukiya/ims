@@ -54,7 +54,7 @@
                                                 $_SESSION['loggedin']="true";
                                                 $_SESSION['username']=$rs['data']->username;
                                                 $_SESSION['email']=$rs['data']->email;
-                                                header('location:dashboard.php');
+                                                header('location:index.php');
                                             }else{
                                                 echo "Please check your user name and password again.";
                                             }
