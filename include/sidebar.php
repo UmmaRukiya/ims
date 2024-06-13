@@ -30,7 +30,12 @@
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-chart-bar-33"></i><span class="nav-text">Charts</span></a>
                         <ul aria-expanded="false">
-                            <li><a href="<?= $baseurl ?>class.php"> Class</a></li>
+                            <li><a href="javascript:void()"> Class</a>
+                            <ul aria-expanded="false">
+                            <li><a href="<?= $baseurl ?>class_add.php"> Add</a>
+                            <li><a href="<?= $baseurl ?>class_list.php"> List</a>
+                            </ul>
+                        </li>
                             <li><a href="<?= $baseurl ?>assets/chart-morris.html">Morris</a></li>
                             <li><a href="<?= $baseurl ?>assets/chart-chartjs.html">Chartjs</a></li>
                             <li><a href="<?= $baseurl ?>assets/chart-chartist.html">Chartist</a></li>

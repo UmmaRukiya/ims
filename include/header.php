@@ -6,6 +6,8 @@
     }else{
         header('location:login.php');
     }
+    include_once('class/crud.php');
+    $mysqli=new crud;
 ?>
 <?php $baseurl="http://localhost/ims/";?>
 <!DOCTYPE html>

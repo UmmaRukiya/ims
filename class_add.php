@@ -1,10 +1,6 @@
 <?php include('include/header.php') ?>
 <?php include('include/sidebar.php') ?>
-<?php
-    session_start();
-    $baseurl="http://localhost/ims/";
-    include_once('class/crud.php');
-?>
+
 
 <body>
         <!--**********************************
@@ -21,30 +17,35 @@
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Table</a></li>
-                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Bootstrap</a></li>
+                            <li class="breadcrumb-item"><a href="class.php">Class</a></li>
+                            <li class="breadcrumb-item active"><a href="table-bootstrap-basic.php">Class Table</a></li>
                         </ol>
                     </div>
                 </div>
                 <!-- row -->
-
-                <form action="" method="post" class="was-validated">
-                    <div class="mb-3">
-                        <select class="form-select" required aria-label="select example">
-                        <option value="">Open this select menu</option>
-                        <option value="1">Five</option>
-                        <option value="2">Six</option>
-                        <option value="3">Seven</option>
-                        <option value="3">Eight</option>
-                        <option value="3">Nine</option>
-                        <option value="3">Ten</option>
-                        </select>
-                        
-                    </div>
-                    <div class="mb-3">
-                        <button class="btn btn-primary" type="submit">Submit</button>
-                    </div>
-                </form>
+           
+            <form method="post" action="">
+                <div class="mb-3">
+                    <label class="form-label" for="class">Class</label>
+                    <input type="text" name="class" class="form-control" id="class" placeholder="Class.." />
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+            <?php 
+                if($_POST){
+                    $_POST['created_at']=date('Y-m-d H:i:s');
+                    $_POST['created_by']=1;
+                    $rs=$mysqli->common_create('class',$_POST);
+                    if($rs){
+                        if($rs['data']){
+                            echo "<script>window.location='{$baseurl}class_list.php'</script>";
+                        }else{
+                            echo $rs['error'];
+                        }
+                    }
+                }
+            ?>
                
                 <!-- <div class="row"> 
                     <div class="col-lg-12">
@@ -95,6 +96,7 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
+   
     <script src="<?= $baseurl ?>assets/vendor/global/global.min.js"></script>
     <script src="<?= $baseurl ?>assets/js/quixnav-init.js"></script>
     <script src="<?= $baseurl ?>assets/js/custom.min.js"></script>
