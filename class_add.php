@@ -30,7 +30,7 @@
                     <input type="text" name="class" class="form-control" id="class" placeholder="Class.." />
                 </div>
                 
-                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             <?php 
                 if($_POST){
