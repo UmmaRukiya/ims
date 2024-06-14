@@ -1,6 +1,5 @@
-<?php include('include/header.php'); ?>
+<?php include('include/header.php') ; ?>
 <?php include('include/sidebar.php'); ?>
-
 
 <body>
         <!--**********************************
@@ -8,6 +7,16 @@
         ***********************************-->
         <div class="content-body">
             <div class="container-fluid">
+        <?php 
+            $olddata=array();
+            $con['id']=$_GET['id'];
+            $result=$mysqli->common_select_single('class','*',$con);
+            if($result){
+                if($result['data']){
+                    $olddata=$result['data'];
+                }
+            }
+       ?>
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
@@ -27,16 +36,16 @@
             <form method="post" action="">
                 <div class="mb-3">
                     <label class="form-label" for="class">Class</label>
-                    <input type="text" name="class" class="form-control" id="class" placeholder="Class.." />
+                    <input type="text" name="class" class="form-control" id="class" placeholder="Class.." value="<?= $olddata->class ?>" />
                 </div>
                 
                 <button type="submit" class="btn btn-primary">Save</button>
             </form>
             <?php 
                 if($_POST){
-                    $_POST['created_at']=date('Y-m-d H:i:s');
-                    $_POST['created_by']=1;
-                    $rs=$mysqli->common_create('class',$_POST);
+                    $_POST['updated_at']=date('Y-m-d H:i:s');
+                    $_POST['updated_by']=1;
+                    $rs=$mysqli->common_update('class',$_POST,$con);
                     if($rs){
                         if($rs['data']){
                             echo "<script>window.location='{$baseurl}class_list.php'</script>";
