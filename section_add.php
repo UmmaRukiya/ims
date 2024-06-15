@@ -17,8 +17,8 @@
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="class_add.php">Section</a></li>
-                            <li class="breadcrumb-item active"><a href="class_list.php">Section Table</a></li>
+                            <li class="breadcrumb-item"><a href="section_add.php">Section</a></li>
+                            <li class="breadcrumb-item active"><a href="section_list.php">Section Table</a></li>
                         </ol>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
            
             <form method="post" action="">
                 <div class="mb-3">
-                    <label class="form-label" for="class">Section</label>
+                    <label class="form-label" for="section">Section</label>
                     <input type="text" name="section" class="form-control" id="section" placeholder="Section name.." />
                 </div>
                 
