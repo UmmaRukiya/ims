@@ -54,7 +54,12 @@
                                     <li><a href="<?= $baseurl ?>subject_list.php"> List</a>
                                 </ul>
                             </li>
-                            <li><a href="<?= $baseurl ?>assets/chart-sparkline.html">Sparkline</a></li>
+                            <li><a href="javascript:void()">Session</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="<?= $baseurl ?>session_add.php"> Add</a>
+                                    <li><a href="<?= $baseurl ?>session_list.php"> List</a>
+                                </ul>
+                            </li>
                             <li><a href="<?= $baseurl ?>assets/chart-peity.html">Peity</a></li>
                         </ul>
                     </li>

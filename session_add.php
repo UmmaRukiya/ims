@@ -17,8 +17,8 @@
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="class_add.php">Section</a></li>
-                            <li class="breadcrumb-item active"><a href="class_list.php">Section Table</a></li>
+                            <li class="breadcrumb-item"><a href="session_add.php">Session</a></li>
+                            <li class="breadcrumb-item active"><a href="session_list.php">Session Table</a></li>
                         </ol>
                     </div>
                 </div>
@@ -26,8 +26,8 @@
            
             <form method="post" action="">
                 <div class="mb-3">
-                    <label class="form-label" for="class">Section</label>
-                    <input type="text" name="section" class="form-control" id="section" placeholder="Section name.." />
+                    <label class="form-label" for="session">Session</label>
+                    <input type="text" name="session" class="form-control" id="session" placeholder="Session.." />
                 </div>
                 
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -36,10 +36,10 @@
                 if($_POST){
                     $_POST['created_at']=date('Y-m-d H:i:s');
                     $_POST['created_by']=1;
-                    $rs=$mysqli->common_create('section',$_POST);
+                    $rs=$mysqli->common_create('session',$_POST);
                     if($rs){
                         if($rs['data']){
-                            echo "<script>window.location='{$baseurl}section_list.php'</script>";
+                            echo "<script>window.location='{$baseurl}session_list.php'</script>";
                         }else{
                             echo $rs['error'];
                         }
