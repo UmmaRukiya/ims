@@ -38,17 +38,22 @@
                             </li>
                             <li><a href="javascript:void()">Section</a>
                                 <ul aria-expanded="false">
-                                <li><a href="<?= $baseurl ?>section_add.php"> Add</a>
-                                <li><a href="<?= $baseurl ?>section_list.php"> List</a>
+                                    <li><a href="<?= $baseurl ?>section_add.php"> Add</a>
+                                    <li><a href="<?= $baseurl ?>section_list.php"> List</a>
                                 </ul>
                             </li>
                             <li><a href="javascript:void()">Group</a>
                                 <ul aria-expanded="false">
-                                <li><a href="<?= $baseurl ?>group_add.php"> Add</a>
-                                <li><a href="<?= $baseurl ?>group_list.php"> List</a>
+                                    <li><a href="<?= $baseurl ?>group_add.php"> Add</a>
+                                    <li><a href="<?= $baseurl ?>group_list.php"> List</a>
                                 </ul>
                             </li>
-                            <li><a href="<?= $baseurl ?>assets/chart-chartist.html">Chartist</a></li>
+                            <li><a href="javascript:void()">Subject</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="<?= $baseurl ?>subject_add.php"> Add</a>
+                                    <li><a href="<?= $baseurl ?>subject_list.php"> List</a>
+                                </ul>
+                            </li>
                             <li><a href="<?= $baseurl ?>assets/chart-sparkline.html">Sparkline</a></li>
                             <li><a href="<?= $baseurl ?>assets/chart-peity.html">Peity</a></li>
                         </ul>
