@@ -28,7 +28,7 @@
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-chart-bar-33"></i><span class="nav-text">Student</span></a>
+                                class="icon icon-chart-bar-33"></i><span class="nav-text">Management</span></a>
                         <ul aria-expanded="false">
                             <li><a href="javascript:void()">Class</a>
                                 <ul aria-expanded="false">
@@ -65,10 +65,12 @@
                     </li>
                     <li class="nav-label">Components</li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-world-2"></i><span class="nav-text">Bootstrap</span></a>
+                                class="icon icon-world-2"></i><span class="nav-text">Student Form</span></a>
                         <ul aria-expanded="false">
-                            <li><a href="<?= $baseurl ?>assets/ui-accordion.html">Accordion</a></li>
-                            <li><a href="<?= $baseurl ?>assets/ui-alert.html">Alert</a></li>
+                            <li><a href="student_add.php">Add</a></li>
+                            <li><a href="student_list.php">List</a></li>
+                        </ul>
+                    </li>
                             <li><a href="<?= $baseurl ?>assets/ui-badge.html">Badge</a></li>
                             <li><a href="<?= $baseurl ?>assets/ui-button.html">Button</a></li>
                             <li><a href="<?= $baseurl ?>assets/ui-modal.html">Modal</a></li>
