@@ -25,40 +25,39 @@
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
                             <h4>Hi, welcome back!</h4>
-                            <span class="ml-1">Student Datatable</span>
+                            <p class="mb-0">Your school dashboard template</p>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="student_add.php">Form</a></li>
-                            <li class="breadcrumb-item active"><a href="student_list.php">Datatable</a></li>
+                            <li class="breadcrumb-item active"><a href="student_list.php">List</a></li>
                         </ol>
                     </div>
                 </div>
                 <!-- row -->
 
-
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Basic Datatable</h4>
+                                <h4 class="card-title">Student List</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table id="example" class="display" style="min-width: 845px">
+                                    <table class="table table-bordered table-striped verticle-middle table-responsive-sm">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
-                                                <th>Name</th>
-                                                <th>Father</th>
-                                                <th>Mother</th>
-                                                <th>Email</th>
-                                                <th>Contact</th>
-                                                <th>Photo</th>
-                                                <th>Username</th>
-                                                <th>Password</th>
-                                                <th>Action</th>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Father</th>
+                                                <th scope="col">Mother</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Contact</th>
+                                                <th scope="col">Photo</th>
+                                                <th scope="col">Username</th>
+                                                <th scope="col">Password</th>
+                                                <th scope="col">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -92,33 +91,17 @@
                                         </tr>
                                         <?php } } } ?>
                                         </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>ID</th>
-                                                <th>Name</th>
-                                                <th>Father</th>
-                                                <th>Mother</th>
-                                                <th>Email</th>
-                                                <th>Contact</th>
-                                                <th>Photo</th>
-                                                <th>Username</th>
-                                                <th>Password</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </tfoot>
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </div>
-                   
                 </div>
             </div>
         </div>
         <!--**********************************
             Content body end
         ***********************************-->
-
     <!--**********************************
         Scripts
     ***********************************-->
@@ -126,13 +109,7 @@
     <script src="<?= $baseurl ?>assets/vendor/global/global.min.js"></script>
     <script src="<?= $baseurl ?>assets/js/quixnav-init.js"></script>
     <script src="<?= $baseurl ?>assets/js/custom.min.js"></script>
-    
-
-
-    <!-- Datatable -->
-    <script src="<?= $baseurl ?>assets/vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="<?= $baseurl ?>assets/js/plugins-init/datatables.init.js"></script>
 
 </body>
-<?php include('include/footer.php') ?>
+<?php include('include/footer.php') ?> 
 </html>
