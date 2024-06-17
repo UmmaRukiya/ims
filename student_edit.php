@@ -23,6 +23,16 @@
         ***********************************-->
         <div class="content-body">
             <div class="container-fluid">
+        <?php 
+            $olddata=array();
+            $con['id']=$_GET['id'];
+            $result=$mysqli->common_select_single('student','*',$con);
+            if($result){
+                if($result['data']){
+                    $olddata=$result['data'];
+                }
+            }
+        ?>
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
@@ -46,62 +56,46 @@
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-        <?php 
-            $olddata=array();
-            $con['id']=$_GET['id'];
-            $result=$mysqli->common_select_single('student','*',$con);
-            if($result){
-                if($result['data']){
-                    $olddata=$result['data'];
-                }
-            }
-        ?>
-                                    <form method="post">
-
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label> ID</label>
-                                                <input type="text" name="id" id="id" class="form-control" placeholder="Student id no..">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label>Name</label>
-                                                <input type="text"  name="name" id="name" class="form-control" placeholder="Enter student name.. ">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label>Father</label>
-                                                <input type="text" name="father_name" id="father_name" class="form-control" placeholder="Father name..">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label>Mother</label>
-                                                <input type="text" name="mother_name" id="mother_name" class="form-control" placeholder="Mother name..">
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label> Email</label>
-                                                <input type="email" name="email" id="email" class="form-control" placeholder="Enter email address">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label>Contact</label>
-                                                <input type="text"  name="contact" id="contact" class="form-control" placeholder="Mobile no..">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label>Photo</label>
-                                                <input type="file" name="photo" id="photo" class="form-control" placeholder="Photo..">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label>User Name</label>
-                                                <input type="text" name="username" id="username" class="form-control" placeholder="Enter user name..">
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-md-6">
-                                                <label>Password</label>
-                                                <input type="password"  name="password" id="password" class="form-control" placeholder="password">
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </form>
+                <form method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Name</label>
+                            <input type="text"  name="name" id="name" class="form-control" placeholder="Enter student name.. ">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Photo</label>
+                            <input type="file" name="photo" id="photo" class="form-control" >
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Father</label>
+                            <input type="text" name="father_name" id="father_name" class="form-control" >
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Mother</label>
+                            <input type="text" name="mother_name" id="mother_name" class="form-control" >
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label> Email</label>
+                            <input type="email" name="email" id="email" class="form-control" >
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Contact</label>
+                            <input type="text"  name="contact" id="contact" class="form-control">
+                        </div>
+                    
+                        <div class="form-group col-md-6">
+                            <label>User Name</label>
+                            <input type="text" name="username" id="username" class="form-control" >
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Password</label>
+                            <input type="password"  name="password" id="password" class="form-control" >
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             <?php 
                 if($_POST){
                     $_POST['updated_at']=date('Y-m-d H:i:s');

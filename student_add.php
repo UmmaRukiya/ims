@@ -50,12 +50,12 @@
 
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label> ID</label>
-                                                <input type="text" name="id" id="id" class="form-control" placeholder="Student id no..">
-                                            </div>
-                                            <div class="form-group col-md-6">
                                                 <label>Name</label>
                                                 <input type="text"  name="name" id="name" class="form-control" placeholder="Enter student name.. ">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label>Photo</label>
+                                                <input type="file" name="photo" id="photo" class="form-control" placeholder="Photo..">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>Father</label>
@@ -75,16 +75,11 @@
                                                 <label>Contact</label>
                                                 <input type="text"  name="contact" id="contact" class="form-control" placeholder="Mobile no..">
                                             </div>
-                                            <div class="form-group col-md-6">
-                                                <label>Photo</label>
-                                                <input type="file" name="photo" id="photo" class="form-control" placeholder="Photo..">
-                                            </div>
+                                           
                                             <div class="form-group col-md-6">
                                                 <label>User Name</label>
                                                 <input type="text" name="username" id="username" class="form-control" placeholder="Enter user name..">
                                             </div>
-                                        </div>
-                                        <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label>Password</label>
                                                 <input type="password"  name="password" id="password" class="form-control" placeholder="password">
