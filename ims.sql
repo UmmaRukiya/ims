@@ -37,7 +37,7 @@ CREATE TABLE `auth` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,6 +46,7 @@ CREATE TABLE `auth` (
 
 LOCK TABLES `auth` WRITE;
 /*!40000 ALTER TABLE `auth` DISABLE KEYS */;
+INSERT INTO `auth` VALUES (1,NULL,'kamal@gmail.com',NULL,NULL,'kamal','40bd001563085fc35165329ea1ff5c5ecbdbbeef',NULL,'2024-06-14 20:06:58',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `auth` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -65,7 +66,7 @@ CREATE TABLE `class` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,6 +75,7 @@ CREATE TABLE `class` (
 
 LOCK TABLES `class` WRITE;
 /*!40000 ALTER TABLE `class` DISABLE KEYS */;
+INSERT INTO `class` VALUES (1,'Eight','2024-06-16 20:45:29',1,NULL,NULL,NULL),(2,'Seven','2024-06-18 07:54:54',1,NULL,NULL,NULL),(3,'Six','2024-06-18 07:55:02',1,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `class` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -280,7 +282,7 @@ CREATE TABLE `group` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -289,6 +291,7 @@ CREATE TABLE `group` (
 
 LOCK TABLES `group` WRITE;
 /*!40000 ALTER TABLE `group` DISABLE KEYS */;
+INSERT INTO `group` VALUES (1,'A','2024-06-14 21:30:27',1,NULL,NULL,NULL),(2,'B','2024-06-14 21:36:08',1,NULL,NULL,NULL),(3,'C','2024-06-14 21:43:37',1,'2024-06-14 21:46:10',1,'2024-06-14 21:46:18');
 /*!40000 ALTER TABLE `group` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -308,7 +311,7 @@ CREATE TABLE `section` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -317,6 +320,7 @@ CREATE TABLE `section` (
 
 LOCK TABLES `section` WRITE;
 /*!40000 ALTER TABLE `section` DISABLE KEYS */;
+INSERT INTO `section` VALUES (1,'Green','2024-06-14 20:19:08',1,'2024-06-14 20:21:11',1,'2024-06-14 20:21:51'),(2,'Black','2024-06-15 07:44:47',1,'2024-06-15 07:45:02',1,NULL);
 /*!40000 ALTER TABLE `section` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -336,7 +340,7 @@ CREATE TABLE `session` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -345,6 +349,7 @@ CREATE TABLE `session` (
 
 LOCK TABLES `session` WRITE;
 /*!40000 ALTER TABLE `session` DISABLE KEYS */;
+INSERT INTO `session` VALUES (1,'2024','2024-06-15 07:54:51',1,NULL,NULL,NULL),(2,'2301','2024-06-15 07:56:09',1,'2024-06-15 07:59:20',1,'2024-06-15 07:59:32'),(3,'2030','2024-06-15 08:01:05',1,'2024-06-15 08:02:52',1,NULL);
 /*!40000 ALTER TABLE `session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -371,7 +376,7 @@ CREATE TABLE `student` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3899 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -380,17 +385,18 @@ CREATE TABLE `student` (
 
 LOCK TABLES `student` WRITE;
 /*!40000 ALTER TABLE `student` DISABLE KEYS */;
+INSERT INTO `student` VALUES (0,'','','','','','','','454613','2024-06-16 17:33:02',1,'2024-06-16 17:40:23',1,'2024-06-16 17:40:40'),(101,'Kamal','Jamal','Minu','kamal@gmail.com','1281542','World.jpg','kamal','1234','2024-06-16 16:20:32',1,NULL,1,'2024-06-16 17:25:05'),(451,'Priya','Jamal','Minu','rukiyapriya@gmail.com','1531554','image5.jpg','priya','48484','2024-06-16 17:41:30',1,NULL,NULL,NULL),(454,'Umma Rukiya','Jamal','Minu','priyontika111@gmail.com','523563','carosel4.jpg','Rukiya','156565+','2024-06-16 17:36:39',1,NULL,1,'2024-06-17 18:49:13'),(3895,'','Pamal','','priyontika@gmail.com','','image4.jpg','','','2024-06-16 20:44:33',1,NULL,1,'2024-06-18 18:17:43'),(3896,'','','','','','','','','2024-06-17 18:32:19',1,'2024-06-17 18:35:20',1,'2024-06-17 18:49:10'),(3897,'Umma Rukiya','Pamal','Lilo','priyontika1@gmail.com','5698486155','','Rukiya','6578623123','2024-06-17 18:38:04',1,NULL,NULL,NULL),(3898,'Computer','Jamal','','priyonti1@gmail.com','','','ka','','2024-06-17 18:49:03',1,NULL,1,'2024-06-17 18:49:07');
 /*!40000 ALTER TABLE `student` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `student_attandence`
+-- Table structure for table `student_attendance`
 --
 
-DROP TABLE IF EXISTS `student_attandence`;
+DROP TABLE IF EXISTS `student_attendance`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `student_attandence` (
+CREATE TABLE `student_attendance` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `student_id` int(11) DEFAULT NULL,
   `att_date` date DEFAULT NULL,
@@ -407,12 +413,12 @@ CREATE TABLE `student_attandence` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `student_attandence`
+-- Dumping data for table `student_attendance`
 --
 
-LOCK TABLES `student_attandence` WRITE;
-/*!40000 ALTER TABLE `student_attandence` DISABLE KEYS */;
-/*!40000 ALTER TABLE `student_attandence` ENABLE KEYS */;
+LOCK TABLES `student_attendance` WRITE;
+/*!40000 ALTER TABLE `student_attendance` DISABLE KEYS */;
+/*!40000 ALTER TABLE `student_attendance` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -435,7 +441,7 @@ CREATE TABLE `student_details` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -444,6 +450,7 @@ CREATE TABLE `student_details` (
 
 LOCK TABLES `student_details` WRITE;
 /*!40000 ALTER TABLE `student_details` DISABLE KEYS */;
+INSERT INTO `student_details` VALUES (1,'4889',1,2,458,2,'2024-06-17 20:22:21',1,NULL,1,'2024-06-18 21:13:29'),(2,'4888',1,2,4444,1,'2024-06-17 20:32:16',1,NULL,1,'2024-06-18 10:20:53'),(3,'4877',1,2,455,1,'2024-06-17 20:50:33',1,NULL,NULL,NULL),(4,'123',2,2,458,1,'2024-06-18 07:55:44',0,NULL,NULL,NULL),(5,'4444',3,2,4444,2,'2024-06-18 08:04:39',0,'2024-06-18 10:20:38',1,'2024-06-18 10:17:42'),(6,'123',3,2,4,2,'2024-06-18 18:39:09',0,NULL,1,'2024-06-18 21:13:22');
 /*!40000 ALTER TABLE `student_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -570,7 +577,7 @@ CREATE TABLE `subject` (
   `updated_by` int(11) DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -579,6 +586,7 @@ CREATE TABLE `subject` (
 
 LOCK TABLES `subject` WRITE;
 /*!40000 ALTER TABLE `subject` DISABLE KEYS */;
+INSERT INTO `subject` VALUES (1,'Bangla',110,'2024-06-15 07:29:16',1,'2024-06-15 07:34:19',1,'2024-06-15 07:34:25'),(2,'Bangla',121,'2024-06-15 07:40:02',1,'2024-06-15 07:40:39',1,'2024-06-15 07:40:44');
 /*!40000 ALTER TABLE `subject` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -622,15 +630,15 @@ LOCK TABLES `teacher` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `teacher_attandence`
+-- Table structure for table `teacher_attendance`
 --
 
-DROP TABLE IF EXISTS `teacher_attandence`;
+DROP TABLE IF EXISTS `teacher_attendance`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `teacher_attandence` (
+CREATE TABLE `teacher_attendance` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `teacher_id` int(11) DEFAULT NULL,
+  `student_id` int(11) DEFAULT NULL,
   `att_date` date DEFAULT NULL,
   `in_time` time DEFAULT NULL,
   `out_time` time DEFAULT NULL,
@@ -645,12 +653,12 @@ CREATE TABLE `teacher_attandence` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `teacher_attandence`
+-- Dumping data for table `teacher_attendance`
 --
 
-LOCK TABLES `teacher_attandence` WRITE;
-/*!40000 ALTER TABLE `teacher_attandence` DISABLE KEYS */;
-/*!40000 ALTER TABLE `teacher_attandence` ENABLE KEYS */;
+LOCK TABLES `teacher_attendance` WRITE;
+/*!40000 ALTER TABLE `teacher_attendance` DISABLE KEYS */;
+/*!40000 ALTER TABLE `teacher_attendance` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -662,4 +670,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-14 17:48:34
+-- Dump completed on 2024-06-19  1:37:44
