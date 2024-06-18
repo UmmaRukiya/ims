@@ -28,7 +28,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label class="form-label" for="student_id">Student ID</label>
-                        <input type="text" name="student_id" class="form-control" id="student_id" placeholder="Section name.." />
+                        <input type="text" name="student_id" class="form-control" id="student_id" placeholder="Section name.." >
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="class_id">class</label>
@@ -62,7 +62,7 @@
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="roll">Roll</label>
-                        <input type="text" name="roll" class="form-control" id="roll" placeholder="Roll no." />
+                        <input type="text" name="roll" class="form-control" id="roll" placeholder="Roll no." >
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="group_id">Group</label>

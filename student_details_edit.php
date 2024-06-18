@@ -36,11 +36,11 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label class="form-label" for="student_id">Student ID</label>
-                        <input type="text" name="student_id" class="form-control" id="student_id" placeholder="Section name.." />
+                        <input type="text" name="student_id" class="form-control" id="student_id"  value="<?= $olddata-> student_id ?>">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="class_id">class</label>
-                        <select class="form-control form-select" required name="class_id" id="class_id">
+                        <select class="form-control form-select" required name="class_id" id="class_id" >
                         <option value="">Select Class</option>
                         <?php 
                             $result=$mysqli->common_select('class');
@@ -49,13 +49,13 @@
                                     $i=1;
                                     foreach($result['data'] as $d){
                         ?>
-                            <option value="<?= $d->id ?>" > <?= $d->class ?></option>
+                            <option value="<?= $d->id ?>" <?= $d->id==$olddata->class_id ? "selected" :"" ?>> <?= $d->class ?></option>
                         <?php } } } ?>
                     </select>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="section_id">Section</label>
-                        <select class="form-control form-select" required name="section_id" id="section_id">
+                        <select class="form-control form-select" required name="section_id" id="section_id" >
                         <option value="">Select Section</option>
                         <?php 
                             $result=$mysqli->common_select('section');
@@ -64,17 +64,17 @@
                                     $i=1;
                                     foreach($result['data'] as $d){
                         ?>
-                            <option value="<?= $d->id ?>" > <?= $d->section ?></option>
+                            <option value="<?= $d->id ?>" <?= $d->id==$olddata->section_id ? "selected" :"" ?>> <?= $d->section ?></option>
                         <?php } } } ?>
                     </select>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="roll">Roll</label>
-                        <input type="text" name="roll" class="form-control" id="roll" placeholder="Roll no." />
+                        <input type="text" name="roll" class="form-control" id="roll" placeholder="Roll no." value="<?= $olddata-> roll ?>">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="group_id">Group</label>
-                        <select class="form-control form-select" required name="group_id" id="group_id">
+                        <select class="form-control form-select" required name="group_id" id="group_id" value="<?= $olddata-> group_id ?>">
                         <option value="">Select Group</option>
                         <?php 
                             $result=$mysqli->common_select('`group`');
@@ -83,7 +83,7 @@
                                     $i=1;
                                     foreach($result['data'] as $d){
                         ?>
-                            <option value="<?= $d->id ?>" > <?= $d->group ?></option>
+                            <option value="<?= $d->id ?>" <?= $d->id==$olddata->group_id ? "selected" :"" ?>> <?= $d->group ?></option>
                         <?php } } } ?>
                     </select>
                     </div>
