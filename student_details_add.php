@@ -17,8 +17,8 @@
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="section_add.php">Section</a></li>
-                            <li class="breadcrumb-item active"><a href="section_list.php">Section Table</a></li>
+                            <li class="breadcrumb-item"><a href="student_details_add.php">Student From</a></li>
+                            <li class="breadcrumb-item active"><a href="student_details_list.php">Student Details</a></li>
                         </ol>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label class="form-label" for="student_id">Student ID</label>
-                        <input type="text" name="student_id" class="form-control" id="student_id" placeholder="Section name.." >
+                        <input type="text" name="student_id" class="form-control" id="student_id" placeholder="Student id no." >
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="class_id">class</label>

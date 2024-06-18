@@ -115,7 +115,14 @@
                     </li>
                     <li><a href="widget-basic.html" aria-expanded="false"><i class="icon icon-globe-2"></i><span
                                 class="nav-text">Widget</span></a></li>
-                    <li class="nav-label">Forms</li>
+                    <li class="nav-label">Attendance</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                        class="icon icon-form"></i><span class="nav-text">Student Attendance</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="<?= $baseurl ?>student_attendance_add.php">Add</a></li>
+                            <li><a href="<?= $baseurl ?>student_attendance_list.php">List</a></li>
+                        </ul>
+                    </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-form"></i><span class="nav-text">Forms</span></a>
                         <ul aria-expanded="false">
