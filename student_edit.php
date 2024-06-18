@@ -60,38 +60,38 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Name</label>
-                            <input type="text"  name="name" id="name" class="form-control" placeholder="Enter student name.. ">
+                            <input type="text"  name="name" id="name" class="form-control" placeholder="Enter student name.. " value="<?= $olddata-> name ?>">
                         </div>
                         <div class="form-group col-md-6">
                             <label>Photo</label>
-                            <input type="file" name="photo" id="photo" class="form-control" >
+                            <input type="file" name="photo" id="photo" class="form-control"  placeholder="Photo.." value="<?= $olddata-> photo ?>">
                         </div>
                         <div class="form-group col-md-6">
                             <label>Father</label>
-                            <input type="text" name="father_name" id="father_name" class="form-control" >
+                            <input type="text" name="father_name" id="father_name" class="form-control" placeholder="Father name.." value="<?= $olddata-> father_name ?>">
                         </div>
                         <div class="form-group col-md-6">
                             <label>Mother</label>
-                            <input type="text" name="mother_name" id="mother_name" class="form-control" >
+                            <input type="text" name="mother_name" id="mother_name" class="form-control" placeholder="Mother name.." value="<?= $olddata-> mother_name ?>">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label> Email</label>
-                            <input type="email" name="email" id="email" class="form-control" >
+                            <input type="email" name="email" id="email" class="form-control" value="<?= $olddata-> email ?>">
                         </div>
                         <div class="form-group col-md-6">
                             <label>Contact</label>
-                            <input type="text"  name="contact" id="contact" class="form-control">
+                            <input type="text"  name="contact" id="contact" class="form-control" value="<?= $olddata-> contact ?>">
                         </div>
                     
                         <div class="form-group col-md-6">
                             <label>User Name</label>
-                            <input type="text" name="username" id="username" class="form-control" >
+                            <input type="text" name="username" id="username" class="form-control" value="<?= $olddata-> username ?>">
                         </div>
                         <div class="form-group col-md-6">
                             <label>Password</label>
-                            <input type="password"  name="password" id="password" class="form-control" >
+                            <input type="password"  name="password" id="password" class="form-control" value="<?= $olddata-> password ?>">
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
