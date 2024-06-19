@@ -23,38 +23,46 @@
                     </div>
                 </div>
                 <!-- row -->
-           
+    <?php 
+        $olddata=array();
+        $con['id']=$_GET['id'];
+        $result=$mysqli->common_select_single('student_attendance','*',$con);
+        if($result){
+            if($result['data']){
+                $olddata=$result['data'];
+            }
+        }
+    ?>
             <form method="post" action="">
                 <div class="row">
                     <div class="col-md-6">
                         <label class="form-label" for="student_id">Student ID</label>
-                        <input type="text" name="student_id" class="form-control" id="student_id" placeholder="Student id no." >
+                        <input type="text" name="student_id" class="form-control" id="student_id" placeholder="Student id no." value="<?= $olddata->student_id ?>">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="att_date">Attendance Date</label>
-                        <input type="date" id="att_date" class="form-control" value="<?= date("Y-m-d") ?>" name="att_date">
+                        <input type="date" id="att_date" class="form-control" value="<?= $olddata->att_date ?>" name="att_date" >
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="in_time">In_Time</label>
-                        <input type="time" id="in_time" class="form-control" value="<?= date('H:i:s') ?>" name="in_time">
+                        <input type="time" id="in_time" class="form-control" value="<?= $olddata->in_time ?>" name="in_time">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="out_time">Out_Time</label>
-                        <input type="time" name="out_time" class="form-control" id="out_time" value="<?= date('H:i:s') ?>" >
+                        <input type="time" name="out_time" class="form-control" id="out_time" value="<?= $olddata->out_time ?>" >
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="note">Note</label>
-                        <textarea name="note" id="note" class="form-control" placeholder="write a note." ></textarea>
+                        <textarea name="note" id="note" class="form-control"  value="<?= $olddata-> note ?>"></textarea>
                     </div>
                 </div><br>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             <?php 
                 if($_POST){
-                    $_POST['created_at']=date('Y-m-d H:i:s');
-                    $_POST['created_by']=$_SESSION['id'];
-                   
-                    $rs=$mysqli->common_create('student_attendance',$_POST);
+                    $_POST['updated_at']=date('Y-m-d H:i:s');
+                    $_POST['updated_by']=1;
+                    $rs=$mysqli->common_update('student_attendance',$_POST,$con);
                     if($rs){
                         if($rs['data']){
                             echo "<script>window.location='{$baseurl}student_attendance_list.php'</script>";
