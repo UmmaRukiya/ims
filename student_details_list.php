@@ -30,8 +30,8 @@
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="student_add.php">Form</a></li>
-                            <li class="breadcrumb-item active"><a href="student_list.php">List</a></li>
+                            <li class="breadcrumb-item"><a href="student_details_add.php">Student From</a></li>
+                            <li class="breadcrumb-item active"><a href="student_details_list.php">Student Details</a></li>
                         </ol>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Student List</h4>
+                                <h4 class="card-title">Student Details List</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -60,7 +60,7 @@
                                         <tbody>
                     <?php 
                         $result=$mysqli->common_select_query("select student_details.id, student_details.student_id, student_details.roll, class.class, section.section, `group`.`group` from student_details join class on student_details.class_id=class.id
-                        inner join section on student_details.section_id = section.id , inner join `group` on student_details.group_id = `group`.id");
+                        inner join section on student_details.section_id = section.id  inner join `group` on student_details.group_id = `group`.id");
                         if($result){
                             if($result['data']){
                                 $i=1;
@@ -75,7 +75,7 @@
                                             <td><?= $data-> group ?></td>
                                             <td>
                                                 <span>
-                                                    <a href="<?= $baseurl ?>student_details_edit.php?id=<?= $data ->id ?>" class="mr-4" data-toggle="tooltip"
+                                                    <a href="<?= $baseurl ?>student_attendance_edit.php?id=<?= $data ->id ?>" class="mr-4" data-toggle="tooltip"
                                                         data-placement="top" title="Edit"><i
                                                             class="fa fa-pencil color-muted"></i> </a>
                                                     <a href="<?= $baseurl ?>student_details_delete.php?id=<?= $data ->id ?>" data-toggle="tooltip"
