@@ -75,7 +75,7 @@
                                             <td><?= $data-> group ?></td>
                                             <td>
                                                 <span>
-                                                    <a href="<?= $baseurl ?>student_attendance_edit.php?id=<?= $data ->id ?>" class="mr-4" data-toggle="tooltip"
+                                                    <a href="<?= $baseurl ?>student_details_edit.php?id=<?= $data ->id ?>" class="mr-4" data-toggle="tooltip"
                                                         data-placement="top" title="Edit"><i
                                                             class="fa fa-pencil color-muted"></i> </a>
                                                     <a href="<?= $baseurl ?>student_details_delete.php?id=<?= $data ->id ?>" data-toggle="tooltip"
