@@ -133,7 +133,14 @@
                             <li><a href="<?= $baseurl ?>student-form.php">Student</a></li>
                         </ul>
                     </li>
-                    <li class="nav-label">Table</li>
+                    <li class="nav-label">Subject</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                        class="icon icon-layout-25"></i><span class="nav-text">Class Subject</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="<?= $baseurl ?>class_subject_add.php">Add</a></li>
+                            <li><a href="<?= $baseurl ?>class_subject_list.php">List</a></li>
+                        </ul>
+                    </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-layout-25"></i><span class="nav-text">Table</span></a>
                         <ul aria-expanded="false">
