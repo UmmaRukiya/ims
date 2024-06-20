@@ -142,6 +142,13 @@
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                        class="icon icon-layout-25"></i><span class="nav-text">Student Marks</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="<?= $baseurl ?>student_marks_add.php">Add</a></li>
+                            <li><a href="<?= $baseurl ?>student_marks_list.php">List</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-layout-25"></i><span class="nav-text">Table</span></a>
                         <ul aria-expanded="false">
                             <li><a href="table-bootstrap-basic.php">Bootstrap</a></li>
