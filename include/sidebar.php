@@ -133,6 +133,13 @@
                             <li><a href="fees_category_list.php">List</a></li>
                         </ul>
                     </li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-layout-25"></i><span class="nav-text">Class Fees Setting</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="class_fees_setting_add.php">Add</a></li>
+                            <li><a href="class_fees_setting_list.php">List</a></li>
+                        </ul>
+                    </li>
 
                     <li class="nav-label">Extra</li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
