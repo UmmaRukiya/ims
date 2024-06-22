@@ -50,7 +50,7 @@
                                         join subject on class_subject.subject_id= subject.id
                                         join class on class_subject.class_id=class.id
                                         join `group` on class_subject.group_id = `group`.id
-                                        inner join session on class_subject.session_id = session.id ");
+                                        inner join session on class_subject.session_id = session.id where class_subject.deleted_at is null");
                                         if($result){
                                             if($result['data']){
                                                 $i=1;

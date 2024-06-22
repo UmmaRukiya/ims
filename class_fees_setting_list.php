@@ -47,7 +47,7 @@
                                             join fees_category on class_fees_setting.fees_id= fees_category.id
                                             join session on class_fees_setting.session_id= session.id
                                             join class on class_fees_setting.class_id= class.id
-                                            join `group` on class_fees_setting.group_id=`group`.id");
+                                            join `group` on class_fees_setting.group_id=`group`.id where class_fees_setting.deleted_at is null");
                                             if($result){
                                                 if($result['data']){
                                                     $i=1;

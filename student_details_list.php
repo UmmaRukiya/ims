@@ -60,7 +60,7 @@
                                         <tbody>
                     <?php 
                         $result=$mysqli->common_select_query("select student_details.id, student_details.student_id, student_details.roll, class.class, section.section, `group`.`group` from student_details join class on student_details.class_id=class.id
-                        inner join section on student_details.section_id = section.id  inner join `group` on student_details.group_id = `group`.id");
+                        inner join section on student_details.section_id = section.id  inner join `group` on student_details.group_id = `group`.id where student_details.deleted_at is null");
                         if($result){
                             if($result['data']){
                                 $i=1;
