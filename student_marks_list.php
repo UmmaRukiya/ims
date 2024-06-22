@@ -58,7 +58,7 @@
                                         join section on student_marks.class_id=section.id
                                         join `group` on student_marks.group_id = `group`.id
                                         join session on student_marks.session_id = session.id 
-                                        join class_subject on student_marks.pass_marks = class_subject.id ");
+                                        join class_subject on student_marks.pass_marks = class_subject.id where student_marks.deleted_at is null");
                                         if($result){
                                             if($result['data']){
                                                 $i=1;
