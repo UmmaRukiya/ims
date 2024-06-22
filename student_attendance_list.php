@@ -44,7 +44,8 @@
                                     <tbody>
                                         
                                         <?php 
-                                            $result=$mysqli->common_select('student_attendance');
+                                            $result=$mysqli->common_select_query('select student_attendance.*, student_details.student_id from student_attendance
+                                            join student_details on student_attendance.student_id=student_details.id where student_attendance.deleted_at is null');
                                             if($result){
                                                 if($result['data']){
                                                     $i=1;
@@ -62,7 +63,7 @@
                                                     <a href="<?= $baseurl ?>student_attendance_edit.php?id=<?= $data ->id ?>" class="mr-4" data-toggle="tooltip"
                                                         data-placement="top" title="Edit"><i
                                                             class="fa fa-pencil color-muted"></i> </a>
-                                                    <a href="<?= $baseurl ?>student_attendance_delete.php?id=<?= $data ->id ?>" data-toggle="tooltip"
+                                                    <a onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>student_attendance_delete.php?id=<?= $data ->id ?>" data-toggle="tooltip"
                                                         data-placement="top" title="Close"><i
                                                             class="fa fa-close color-danger"></i></a>
                                                 </span>

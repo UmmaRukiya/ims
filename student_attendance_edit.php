@@ -37,7 +37,18 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label class="form-label" for="student_id">Student ID</label>
-                        <input type="text" name="student_id" class="form-control" id="student_id" placeholder="Student id no." value="<?= $olddata->student_id ?>">
+                        <select class="form-control form-select" required name="student_id" id="student_id">
+                            <option value="">Select Student</option>
+                            <?php 
+                                $result=$mysqli->common_select('student_details');
+                                if($result){
+                                    if($result['data']){
+                                        $i=1;
+                                        foreach($result['data'] as $d){
+                            ?>
+                                <option value="<?= $d->id ?>" <?= $d->id==$olddata->student_id ? "selected" :"" ?> > <?= $d-> student_id ?> </option>
+                            <?php } } } ?>
+                        </select>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="att_date">Attendance Date</label>
