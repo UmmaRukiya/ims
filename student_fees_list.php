@@ -15,8 +15,8 @@
                 </div>
                 <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="class_fees_setting_add.php">Class Fees</a></li>
-                        <li class="breadcrumb-item active"><a href="class_fees_setting_list.php">Class Fees List</a></li>
+                        <li class="breadcrumb-item"><a href="student_fees_add.php">Student Fees</a></li>
+                        <li class="breadcrumb-item active"><a href="student_fees_list.php">Student Fees List</a></li>
                     </ol>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Class Fees List</h4>
+                            <h4 class="card-title">Student Fees List</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -33,21 +33,25 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">ID</th>
-                                                <th scope="col">Fees</th>
+                                                <th scope="col">Student ID</th>
                                                 <th scope="col">Session</th>
                                                 <th scope="col">Class</th>
                                                 <th scope="col">Group</th>
                                                 <th scope="col">Amount</th>                                              
+                                                <th scope="col">Discount</th>                                              
+                                                <th scope="col">Fees Date</th>                                              
+                                                <th scope="col">Due</th>                                              
                                                 <th scope="col">Actions</th>
                                             </tr>
                                         </thead>
                                     <tbody>
                                         <?php 
-                                            $result=$mysqli->common_select_query("select class_fees_setting.id, class_fees_setting.amount, fees_category.name, session.session, class.class, `group`.`group` from class_fees_setting 
-                                            join fees_category on class_fees_setting.fees_id= fees_category.id
-                                            join session on class_fees_setting.session_id= session.id
-                                            join class on class_fees_setting.class_id= class.id
-                                            join `group` on class_fees_setting.group_id=`group`.id where class_fees_setting.deleted_at is null");
+                                            $result=$mysqli->common_select_query("select student_fees.*, student_details.student_id, class_fees_setting.amount, session.session, class.class, `group`.`group` from student_fees 
+                                            join student_details on student_fees.student_id= student_details.id
+                                            join session on student_fees.session_id= session.id
+                                            join class on student_fees.class_id= class.id
+                                            join `group` on student_fees.group_id=`group`.id 
+                                            join class_fees_setting on student_fees.amount=class_fees_setting.id where student_fees.deleted_at is null");
                                             if($result){
                                                 if($result['data']){
                                                     $i=1;
@@ -55,18 +59,21 @@
                                         ?>
                                         <tr>
                                             <td><?= $i++ ?></td>
-                                            <td><?= $data-> name ?></td>
+                                            <td><?= $data-> student_id ?></td>
                                             <td><?= $data-> session ?></td>
                                             <td><?= $data-> class ?></td>
                                             <td><?= $data-> group ?></td>
                                             <td><?= $data-> amount ?></td>
+                                            <td><?= $data-> discount ?></td>
+                                            <td><?= $data-> fees_date ?></td>
+                                            <td><?= $data-> due ?></td>
                                             
                                             <td>
                                             <span>
-                                                    <a href="<?= $baseurl ?>class_fees_setting_edit.php?id=<?= $data ->id ?>" class="mr-4" data-toggle="tooltip"
+                                                    <a href="<?= $baseurl ?>student_fees_edit.php?id=<?= $data ->id ?>" class="mr-4" data-toggle="tooltip"
                                                         data-placement="top" title="Edit"><i
                                                             class="fa fa-pencil color-muted"></i> </a>
-                                                    <a href="<?= $baseurl ?>class_fees_setting_delete.php?id=<?= $data ->id ?>" data-toggle="tooltip"
+                                                    <a href="<?= $baseurl ?>student_fees_delete.php?id=<?= $data ->id ?>" data-toggle="tooltip"
                                                         data-placement="top" title="Close"><i
                                                             class="fa fa-close color-danger"></i></a>
                                                 </span>
