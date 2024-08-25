@@ -38,20 +38,20 @@
                                                 <th scope="col">Class</th>
                                                 <th scope="col">Group</th>
                                                 <th scope="col">Amount</th>                                              
-                                                <th scope="col">Discount</th>                                              
-                                                <th scope="col">Fees Date</th>                                              
+                                                <th scope="col">Fees Waiver</th>                                              
+                                                <th scope="col">Fees Month</th>                                              
                                                 <th scope="col">Due</th>                                              
                                                 <th scope="col">Actions</th>
                                             </tr>
                                         </thead>
                                     <tbody>
                                         <?php 
-                                            $result=$mysqli->common_select_query("select student_fees.*, student_details.student_id, class_fees_setting.amount, session.session, class.class, `group`.`group` from student_fees 
-                                            join student_details on student_fees.student_id= student_details.id
+                                            $result=$mysqli->common_select_query("select student_fees.*, student.name, session.session, class.class, `group`.`group` from student_fees 
+                                            join student_details on student_fees.student_id= student_details.student_id
+                                            join student on student_fees.student_id= student.id
                                             join session on student_fees.session_id= session.id
                                             join class on student_fees.class_id= class.id
-                                            join `group` on student_fees.group_id=`group`.id 
-                                            join class_fees_setting on student_fees.amount=class_fees_setting.id where student_fees.deleted_at is null");
+                                            join `group` on student_fees.group_id=`group`.id ");
                                             if($result){
                                                 if($result['data']){
                                                     $i=1;
@@ -59,23 +59,20 @@
                                         ?>
                                         <tr>
                                             <td><?= $i++ ?></td>
-                                            <td><?= $data-> student_id ?></td>
-                                            <td><?= $data-> session ?></td>
-                                            <td><?= $data-> class ?></td>
-                                            <td><?= $data-> group ?></td>
-                                            <td><?= $data-> amount ?></td>
-                                            <td><?= $data-> discount ?></td>
-                                            <td><?= $data-> fees_date ?></td>
-                                            <td><?= $data-> due ?></td>
-                                            
+                                            <td><?= $data->name ?></td>
+                                            <td><?= $data->session ?></td>
+                                            <td><?= $data->class ?></td>
+                                            <td><?= $data->group ?></td>
+                                            <td><?= $data->amount ?></td>
+                                            <td><?= $data->discount ?></td>
+                                            <td><?= date('F',strtotime('01.'.$data->fees_month.'.2001'))?>, <?= $data->fees_year ?></td>
+                                            <td><?= $data-> total_amount - $data-> pay ?></td>
                                             <td>
                                             <span>
                                                     <a href="<?= $baseurl ?>student_fees_edit.php?id=<?= $data ->id ?>" class="mr-4" data-toggle="tooltip"
-                                                        data-placement="top" title="Edit"><i
-                                                            class="fa fa-pencil color-muted"></i> </a>
-                                                    <a href="<?= $baseurl ?>student_fees_delete.php?id=<?= $data ->id ?>" data-toggle="tooltip"
-                                                        data-placement="top" title="Close"><i
-                                                            class="fa fa-close color-danger"></i></a>
+                                                        data-placement="top" title="Edit">
+                                                        <i class="fa fa-money color-muted"></i>
+                                                    </a>
                                                 </span>
                                             </td>
                                         </tr>

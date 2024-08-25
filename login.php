@@ -1,8 +1,7 @@
 <?php
     session_start();
-    $baseurl="http://localhost/ims/";
-    include_once('class/crud.php');
 ?>
+<?php require_once('include/connection.php'); ?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 
@@ -10,7 +9,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Focus - Bootstrap Admin Dashboard </title>
+    <title>IMS - Login </title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="<?= $baseurl ?>assets/images/favicon.png">
     <link href="<?= $baseurl ?>assets/css/style.css" rel="stylesheet">
@@ -47,9 +46,8 @@
                                     </form>
                                     <?php
                                         if($_POST){
-                                            $crud=new crud();
                                             $_POST['password']=sha1($_POST['password']);
-                                            $rs=$crud->common_select_single('auth','*',$_POST);
+                                            $rs=$mysqli->common_select_single('auth','*',$_POST);
                                             if($rs['data']){
                                                 $_SESSION['loggedin']="true";
                                                 $_SESSION['username']=$rs['data']->username;

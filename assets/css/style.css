@@ -260,7 +260,7 @@ body {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #BDBDC7;
+  color: #000000;
   text-align: left;
   background-color: rgba(88, 115, 254, 0.04); }
 
@@ -1340,7 +1340,7 @@ pre {
 .table {
   width: 100%;
   margin-bottom: 1rem;
-  color: #BDBDC7; }
+  color: #000000; }
   .table th,
   .table td {
     padding: 0.75rem;
@@ -1375,7 +1375,7 @@ pre {
   background-color: rgba(0, 0, 0, 0.05); }
 
 .table-hover tbody tr:hover {
-  color: #BDBDC7;
+  color: #000000;
   background-color: rgba(0, 0, 0, 0.075); }
 
 .table-primary,
@@ -1671,7 +1671,7 @@ select.form-control:focus::-ms-value {
   padding-bottom: 0.375rem;
   margin-bottom: 0;
   line-height: 1.5;
-  color: #BDBDC7;
+  color: #000000;
   background-color: transparent;
   border: solid transparent;
   border-width: 1px 0; }
@@ -1984,7 +1984,7 @@ textarea.form-control {
 .btn {
   display: inline-block;
   font-weight: 400;
-  color: #BDBDC7;
+  color: #000000;
   text-align: center;
   vertical-align: middle;
   user-select: none;
@@ -1999,7 +1999,7 @@ textarea.form-control {
     .btn {
       transition: none; } }
   .btn:hover {
-    color: #BDBDC7;
+    color: #000000;
     text-decoration: none; }
   .btn:focus, .btn.focus {
     outline: 0;
@@ -2451,7 +2451,7 @@ input[type="button"].btn-block {
   padding: 0.5rem 0;
   margin: 0.125rem 0 0;
   font-size: 0.875rem;
-  color: #BDBDC7;
+  color: #000000;
   text-align: left;
   list-style: none;
   background-color: #fff;
@@ -4078,7 +4078,7 @@ input[type="button"].btn-block {
     text-decoration: none;
     background-color: #f8f9fa; }
   .list-group-item-action:active {
-    color: #BDBDC7;
+    color: #000000;
     background-color: #e9ecef; }
 
 .list-group-item {
@@ -4712,7 +4712,7 @@ a.close.disabled {
 
 .popover-body {
   padding: 0.5rem 0.75rem;
-  color: #BDBDC7; }
+  color: #000000; }
 
 .carousel {
   position: relative; }
@@ -7656,7 +7656,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: #1f1f1f !important; }
 
 .text-body {
-  color: #BDBDC7 !important; }
+  color: #000000 !important; }
 
 .text-muted {
   color: #666666 !important; }
@@ -7835,7 +7835,7 @@ p {
   box-shadow: none !important; }
 
 #main-wrapper {
-  opacity: 0;
+  opacity: 1;
   transition: all 0.25s ease-in;
   overflow: hidden;
   position: relative; }
@@ -7850,7 +7850,7 @@ li {
   list-style: none; }
 
 a {
-  color: #BDBDC7; }
+  color: #000000; }
   a:hover, a:focus, a.active {
     color: #593bdb;
     text-decoration: none; }
@@ -10292,7 +10292,9 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
   padding: 1.5625rem 0 10px;
   text-transform: uppercase;
   font-size: 0.75rem;
-  letter-spacing: 0.05rem; }
+  letter-spacing: 0.05rem; 
+  color:#FFF;
+}
 
 .nav-badge {
   position: absolute;
@@ -10348,7 +10350,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
         position: relative;
         top: -2px; }
       .quixnav .metismenu > li > a {
-        color: #bdbdc7; }
+        color: #BDBDC7; }
       .quixnav .metismenu > li:hover > a, .quixnav .metismenu > li:focus > a, .quixnav .metismenu > li.mm-active > a {
         background-color: #6b51df;
         color: #fff; }
@@ -10378,7 +10380,7 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
       display: block;
       padding: 0.8125rem 1.25rem;
       outline-width: 0;
-      color: #bdbdc7;
+      color: #BDBDC7;
       text-decoration: none; }
     .quixnav .metismenu .has-arrow:after {
       width: .35rem;
@@ -13020,7 +13022,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
         .event-chat-ryt .chat-reciver .media .media-body p .time {
           position: absolute;
           font-size: 12px;
-          color: #BDBDC7;
+          color: #000000;
           font-weight: 400;
           bottom: 0;
           left: -80px; }
@@ -13060,7 +13062,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
       .event-chat-ryt .chat-sender .media .media-body p .time {
         position: absolute;
         font-size: 10px;
-        color: #BDBDC7;
+        color: #000000;
         font-weight: 400;
         bottom: 0;
         right: -5rem; }
@@ -16170,7 +16172,7 @@ button {
 .table-responsive::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #BDBDC7; }
+  background-color: #000000; }
 
 .multi-steps > li.is-active:before, .multi-steps > li.is-active ~ li:before {
   content: counter(stepNum);
@@ -16234,7 +16236,7 @@ button {
       background-color: #fff;
       border-color: #593bdb; }
     .multi-steps > li.is-active ~ li {
-      color: #BDBDC7; }
+      color: #000000; }
       .multi-steps > li.is-active ~ li:before {
         background-color: #eaeaea;
         border-color: #eaeaea; }

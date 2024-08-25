@@ -9,8 +9,8 @@
             <div class="row page-titles mx-0">
                 <div class="col-sm-6 p-md-0">
                     <div class="welcome-text">
-                        <h4>Hi, welcome back!</h4>
-                        <p class="mb-0">Your school dashboard</p>
+                        <h4>Attendance</h4>
+                        <p class="mb-0">List</p>
                     </div>
                 </div>
                 <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -34,6 +34,8 @@
                                         <tr>
                                             <th scope="col">ID</th>
                                             <th scope="col">Student ID</th>
+                                            <th scope="col">Class</th>
+                                            <th scope="col">Section</th>
                                             <th scope="col">Attendance Date</th>
                                             <th scope="col">In Time</th>
                                             <th scope="col">Out Time</th>
@@ -44,8 +46,11 @@
                                     <tbody>
                                         
                                         <?php 
-                                            $result=$mysqli->common_select_query('select student_attendance.*, student_details.student_id from student_attendance
-                                            join student_details on student_attendance.student_id=student_details.id where student_attendance.deleted_at is null');
+                                            $result=$mysqli->common_select_query("select student_attendance.id, student_details.roll, class.class, section.section, student_attendance.att_date, student_attendance.in_time,
+                                                                                    student_attendance.out_time,student_attendance.note from student_attendance
+                                                                                    join student_details on student_attendance.student_id=student_details.student_id
+                                                                                    join class on student_details.class_id=class.id
+                                                                                    join section on student_details.section_id=section.id where student_attendance.deleted_at is null");
                                             if($result){
                                                 if($result['data']){
                                                     $i=1;
@@ -53,7 +58,9 @@
                                         ?>
                                         <tr>
                                             <td><?= $i++ ?></td>
-                                            <td><?= $data-> student_id ?></td>
+                                            <td><?= $data-> roll ?></td>
+                                            <td><?= $data-> class ?></td>
+                                            <td><?= $data-> section ?></td>
                                             <td><?= $data-> att_date ?></td>
                                             <td><?= $data-> in_time ?></td>
                                             <td><?= $data-> out_time ?></td>
@@ -63,7 +70,7 @@
                                                     <a href="<?= $baseurl ?>student_attendance_edit.php?id=<?= $data ->id ?>" class="mr-4" data-toggle="tooltip"
                                                         data-placement="top" title="Edit"><i
                                                             class="fa fa-pencil color-muted"></i> </a>
-                                                    <a onclick="return confirm('Are you sure?')" href="<?= $baseurl ?>student_attendance_delete.php?id=<?= $data ->id ?>" data-toggle="tooltip"
+                                                    <a href="<?= $baseurl ?>student_attendance_delete.php?id=<?= $data ->id ?>" data-toggle="tooltip"
                                                         data-placement="top" title="Close"><i
                                                             class="fa fa-close color-danger"></i></a>
                                                 </span>

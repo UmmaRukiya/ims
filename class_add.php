@@ -1,11 +1,9 @@
 <?php include('include/header.php'); ?>
 <?php include('include/sidebar.php'); ?>
 
-
-<body>
-        <!--**********************************
+        <!--************************************
             Content body start
-        ***********************************-->
+        *************************************-->
         <div class="content-body">
             <div class="container-fluid">
                 <div class="row page-titles mx-0">

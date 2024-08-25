@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <!-- row -->
-        <?php 
+                <?php 
             $olddata=array();
             $con['id']=$_GET['id'];
             $result=$mysqli->common_select_single('student_marks','*',$con);
@@ -33,7 +33,6 @@
                 }
             }
        ?>
-           
             <form method="post" action="">
                 <div class="row">
                   
@@ -108,7 +107,7 @@
                                         $i=1;
                                         foreach($result['data'] as $d){
                             ?>
-                                <option value="<?= $d->id ?>" <?= $d->id==$olddata->group_id ? "selected" :"" ?> > <?= $d-> group ?></option>
+                                <option value="<?= $d->id ?>" <?= $d->id==$olddata->group_id ? "selected" :"" ?>> <?= $d-> group ?></option>
                             <?php } } } ?>
                        </select>
                     </div>
@@ -130,7 +129,7 @@
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="total_marks">Total Marks</label>
-                        <input type="text" name="total_marks" class="form-control" id="total_marks" value="<?= $olddata-> total_marks ?>">
+                        <input type="text" name="total_marks" class="form-control" id="total_marks"  value="<?= $olddata->total_marks ?>">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="pass_marks">Pass Marks</label>
@@ -143,29 +142,29 @@
                                         $i=1;
                                         foreach($result['data'] as $d){
                             ?>
-                                <option value="<?= $d->id ?>" <?= $d->id==$olddata->pass_marks ? "selected" :"" ?> > <?= $d->pass_marks ?></option>
+                                <option value="<?= $d->id ?>" <?= $d->id==$olddata->pass_marks ? "selected" :"" ?>> <?= $d->pass_marks ?></option>
                             <?php } } } ?>
                         </select>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="sub">Subjective</label>
-                        <input type="text" name="sub" class="form-control" id="sub" value="<?= $olddata-> sub ?>">
+                        <input type="text" name="sub" class="form-control" id="sub"  value="<?= $olddata->sub ?>">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="obj">Objective</label>
-                        <input type="text" name="obj" class="form-control" id="obj" value="<?= $olddata-> obj ?>">
+                        <input type="text" name="obj" class="form-control" id="obj"  value="<?= $olddata->obj ?>">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="prac">Practical</label>
-                        <input type="text" name="prac" class="form-control" id="prac" value="<?= $olddata-> prac ?>">
+                        <input type="text" name="prac" class="form-control" id="prac"  value="<?= $olddata->prac ?>">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="gp">GP</label>
-                        <input type="text" name="gp" class="form-control" id="gp" value="<?= $olddata-> gp ?>">
+                        <input type="text" name="gp" class="form-control" id="gp"  value="<?= $olddata->gp ?>">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="gpl">GPL</label>
-                        <input type="text" name="gpl" class="form-control" id="gpl" value="<?= $olddata-> gpl ?>">
+                        <input type="text" name="gpl" class="form-control" id="gpl"  value="<?= $olddata->gpl ?>">
                     </div>
                 </div>
 

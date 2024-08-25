@@ -48,7 +48,7 @@
                                         ?>
                                         <tr>
                                             <td><?= $i++ ?></td>
-                                            <td><?= $data-> session ?></td>
+                                            <td><?= $data->session ?></td>
                                             <td>
                                                 <span>
                                                     <a href="<?= $baseurl ?>session_edit.php?id=<?= $data ->id ?>" class="mr-4" data-toggle="tooltip"

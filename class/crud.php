@@ -1,12 +1,15 @@
 <?php
     class crud{
         private $host='localhost';
-        private $user='root';
+        private $user='';
         private $password='';
-        private $database='ims';
+        private $database='';
         private $connection;
 
-        public function __construct(){
+        public function __construct($user,$password,$database){
+            $this->user=$user;
+            $this->password=$password;
+            $this->database=$database;
             $this->connection=new mysqli($this->host,$this->user,$this->password,$this->database);
         }
 

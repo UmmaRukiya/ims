@@ -24,24 +24,8 @@
                 </div>
                 <!-- row -->
            
-            <form method="post" action="">
+            <form method="get" action="">
                 <div class="row">
-                  
-                    <div class="col-md-6">
-                        <label class="form-label" for="subject_id">Subject</label>
-                        <select class="form-control form-select" required name="subject_id" id="subject_id">
-                        <option value="">Select Subject ID</option>
-                        <?php 
-                            $result=$mysqli->common_select('subject');
-                            if($result){
-                                if($result['data']){
-                                    $i=1;
-                                    foreach($result['data'] as $d){
-                        ?>
-                            <option value="<?= $d->id ?>" > <?= $d-> subject_name ?> <?= $d-> subject_type ?></option>
-                        <?php } } } ?>
-                    </select>
-                    </div>
                     <div class="col-md-6">
                         <label class="form-label" for="student_id">Student ID</label>
                         <select class="form-control form-select" required name="student_id" id="student_id">
@@ -118,65 +102,107 @@
                             <?php } } } ?>
                         </select>
                     </div>
-                    <div class="col-md-6">
-                        <label class="form-label" for="total_marks">Total Marks</label>
-                        <input type="text" name="total_marks" class="form-control" id="total_marks" >
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label" for="pass_marks">Pass Marks</label>
-                        <select class="form-control form-select" required name="pass_marks" id="pass_marks">
-                            <option value="">Select Pass Marks</option>
-                            <?php 
-                                $result=$mysqli->common_select('class_subject');
+                   
+                    <div class="col-lg-10 justify-content-start mt-2 pt-3 mt-sm-0 d-flex">
+                    <button type="submit" class="btn btn-primary">Get Student</button>
+                </div>
+            </form>
+            <form action="" method="post">
+            <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Subject</th>
+                            <th>Total Marks</th>
+                            <th>Pass marks</th>
+                            <th>Subjective</th>
+                            <th>Objective</th>
+                            <th>Practical</th>
+                            <th>Gp</th>
+                            <th>Gpl</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php 
+                             if(isset($_GET['class_id']) && isset($_GET['section_id'])){
+
+                                $result=$mysqli->common_select_query("select subject.subject_name, class_subject.* 
+                                    from class_subject
+                                    join subject on subject.id=class_subject.subject_id
+                                    where 
+                                    class_subject.class_id={$_GET['class_id']}
+                                    and class_subject.session_id={$_GET['session_id']}
+                                    and class_subject.group_id={$_GET['group_id']}
+                                    and class_subject.deleted_at is null");
+                                                           
                                 if($result){
                                     if($result['data']){
-                                        $i=1;
-                                        foreach($result['data'] as $d){
-                            ?>
-                                <option value="<?= $d->id ?>" > <?= $d->pass_marks ?></option>
-                            <?php } } } ?>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label" for="sub">Subjective</label>
-                        <input type="text" name="sub" class="form-control" id="sub" >
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label" for="obj">Objective</label>
-                        <input type="text" name="obj" class="form-control" id="obj" >
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label" for="prac">Practical</label>
-                        <input type="text" name="prac" class="form-control" id="prac" >
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label" for="gp">GP</label>
-                        <input type="text" name="gp" class="form-control" id="gp" >
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label" for="gpl">GPL</label>
-                        <input type="text" name="gpl" class="form-control" id="gpl" >
-                    </div>
+                                        foreach($result['data'] as $sid=>$data){
+                        ?>
+                                            <tr>
+                                                <td>
+                                                 <input type="checkbox" name="subject_id[]" value="<?= $data->subject_id ?>" >
+                                                </td>
+                                                <td> 
+                                                     <?= $data->subject_name ?>
+                                                </td>
+                                                <td>
+                                                <input type="text" class="form-control" value=" " name="total_marks[<?= $data->subject_id ?>]">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control" value=" " name="pass_marks[<?= $data->subject_id ?>]">
+                                                 </td>
+                                                <td>
+                                                    <input type="text" class="form-control" value=" " name="sub[<?= $data->subject_id ?>]">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control" value=" " name="obj[<?= $data->subject_id ?>]">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control" value=" " name="prac[<?= $data->subject_id ?>]">
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control" value=" " name="gp[<?= $data->subject_id ?>]">
+                                                 </td>
+                                                 <td>
+                                                    <input type="text" class="form-control" value=" " name="gpl[<?= $data->subject_id ?>]">
+                                                 </td>
+                                               
+                                            </tr>
+                                    
+                        <?php } } } }  ?>
+                        
+                    </tbody>
+                </table>
+                <div class="col-lg-10 justify-content-end mt-2 pt-3 mt-sm-0 d-flex">
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
-
-                <br>
-                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
+
             <?php 
-                if($_POST){
-                    $_POST['created_at']=date('Y-m-d H:i:s');
-                    $_POST['created_by']=$_SESSION['id'];
-                   
-                    $rs=$mysqli->common_create('student_marks',$_POST);
-                    if($rs){
-                        if($rs['data']){
-                            echo "<script>window.location='{$baseurl}student_marks_list.php'</script>";
-                        }else{
-                            echo $rs['error'];
-                        }
+            if($_POST){
+             foreach($_POST['subject_id'] as $i=>$subject_id){
+                    $att['subject_id']=$subject_id;
+                    $att['sub']=$_POST['total_marks'][$subject_id];
+                    $att['pass_marks']=$_POST['pass_marks'][$subject_id];
+                    $att['sub']=$_POST['sub'][$subject_id];
+                    $att['obj']=$_POST['obj'][$subject_id];
+                    $att['prac']=$_POST['prac'][$subject_id];
+                    $att['prac']=$_POST['gp'][$subject_id];
+                    $att['prac']=$_POST['gpl'][$subject_id];
+                    $att['created_at']=date('Y-m-d H:i:s');
+                    $att['created_by']=$_SESSION['id'];
+                    $rs=$mysqli->common_create('student_marks',$att);       
+                }
+                if($rs){
+                    if($rs['data']){
+                        echo "<script>window.location='{$baseurl}student_marks_list.php'</script>";
+                    }else{
+                        echo $rs['error'];
                     }
                 }
-            ?>
+            }
+        ?>
             </div>
         </div>
         <!--**********************************

@@ -1,8 +1,7 @@
 <?php
     session_start();
-    $baseurl="http://localhost/ims/";
-    include_once('class/crud.php');
 ?>
+<?php require_once('include/connection.php'); ?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 
@@ -46,10 +45,9 @@
                                     </form>
                                     <?php
                                         if($_POST){
-                                            $crud=new crud();
                                             $_POST['password']=sha1($_POST['password']);
                                             $_POST['created_at']=date('Y-m-d H:i:s');
-                                            $rs=$crud->common_create('auth',$_POST);
+                                            $rs=$mysql->common_create('auth',$_POST);
                                             if($rs['data']){
                                                 header('location:login.php');
                                             }else{

@@ -1,15 +1,5 @@
-<?php
-    include_once('class/crud.php');
-    session_start();
-    if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']){
-
-    }else{
-        header('location:login.php');
-    }
-    include_once('class/crud.php');
-    $mysqli=new crud;
-?>
-<?php $baseurl="http://localhost/ims/";?>
+<?php require_once('auth_check.php'); ?>
+<?php require_once('connection.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,10 +27,10 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-                <img class="logo-abbr" src="<?= $baseurl ?>assets/images/logo.png" alt="">
-                <img class="logo-compact" src="<?= $baseurl ?>assets/images/logo-text.png" alt="">
-                <img class="brand-title" src="<?= $baseurl ?>assets/images/logo-text.png" alt="">
+            <a href="index.php" class="brand-logo">
+                
+                <img class="logo-compact" src="<?= $baseurl ?>assets/images/logo3.png" alt="">
+                <img class="brand-title" src="<?= $baseurl ?>assets/images/logo3.png" alt="">
             </a>
 
             <div class="nav-control">
